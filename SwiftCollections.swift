@@ -56,3 +56,13 @@ extension Array {
         
     }
 }
+
+extension Array {
+    func take(count: Int) -> Array {
+        var result = Array<T>()
+        for idx in 1...count {
+            result.append(self[idx - 1])
+        }
+        return result
+    }
+}
