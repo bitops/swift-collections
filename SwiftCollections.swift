@@ -45,3 +45,14 @@ extension Array {
         
     }
 }
+
+extension Array {
+    func last() -> T? {
+        if self.count >= 1 {
+            return self[self.count - 1]
+        } else {
+            return nil
+        }
+        
+    }
+}
