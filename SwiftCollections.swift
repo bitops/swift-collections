@@ -67,6 +67,17 @@ extension Array {
 }
 
 extension Array {
+    func drop(count: Int) -> Array {
+        var result = Array<T>()
+        var end = self.count - 1
+        for idx in count...end {
+            result.append(self[idx])
+        }
+        return result
+    }
+}
+
+extension Array {
     func find(iterator: (T) -> Bool) -> T? {
         var result : T?
         self.each {
