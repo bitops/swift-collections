@@ -34,3 +34,14 @@ extension Array {
         return result
     }
 }
+
+extension Array {
+    func first() -> T? {
+        if self.count >= 1 {
+            return self[0]
+        } else {
+            return nil
+        }
+        
+    }
+}
