@@ -22,3 +22,15 @@ extension Array {
         return (ifTrue, ifFalse)
     }
 }
+
+extension Array {
+    func all(iterator: (T) -> Bool) -> Bool {
+        var result = true
+        self.each {
+            if iterator($0) == false {
+                result = false; return
+            }
+        }
+        return result
+    }
+}
