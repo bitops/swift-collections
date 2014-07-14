@@ -66,3 +66,15 @@ extension Array {
         return result
     }
 }
+
+extension Array {
+    func find(iterator: (T) -> Bool) -> T? {
+        var result : T?
+        self.each {
+            if iterator($0) == true {
+                result = $0; return
+            }
+        }
+        return result
+    }
+}
