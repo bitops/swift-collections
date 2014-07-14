@@ -35,6 +35,18 @@ extension Array {
 }
 
 extension Array {
+    func any(iterator: (T) -> Bool) -> Bool {
+        var result = false
+        self.each {
+            if iterator($0) == true {
+                result = true; return
+            }
+        }
+        return result
+    }
+}
+
+extension Array {
     func first() -> T? {
         if self.count >= 1 {
             return self[0]
