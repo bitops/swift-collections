@@ -7,7 +7,6 @@ extension Array {
     }
 }
 
-
 extension Array {
     func partition(iterator: (T) -> Bool) -> (Array<T>, Array<T>) {
         var ifTrue = Array<T>()
