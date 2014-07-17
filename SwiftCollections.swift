@@ -7,7 +7,7 @@ extension Array {
     func partition(iterator: (T) -> Bool) -> (Array<T>, Array<T>) {
         var ifTrue = Array<T>()
         var ifFalse = Array<T>()
-        self.each { (item: T) -> Void in
+        self.each { (var item) -> Void in
             if iterator(item) == true {
                 ifTrue.append(item)
             } else {
@@ -19,7 +19,7 @@ extension Array {
     
     func all(iterator: (T) -> Bool) -> Bool {
         var result = true
-        self.each { (item: T) -> Void in
+        self.each { (var item) -> Void in
             if iterator(item) == false {
                 result = false; return
             }
@@ -29,7 +29,7 @@ extension Array {
     
     func any(iterator: (T) -> Bool) -> Bool {
         var result = false
-        self.each { (item: T) -> Void in
+        self.each { (var item) -> Void in
             if iterator(item) == true {
                 result = true; return
             }
@@ -39,7 +39,7 @@ extension Array {
     
     func none(iterator: (T) -> Bool) -> Bool {
         var result = true
-        self.each { (item: T) -> Void in
+        self.each { (var item) -> Void in
             if iterator(item) == true {
                 result = false; return
             }
@@ -82,7 +82,7 @@ extension Array {
     
     func find(iterator: (T) -> Bool) -> T? {
         var result : T?
-        self.each { (item: T) -> Void in
+        self.each { (var item) -> Void in
             if iterator(item) == true {
                 result = item; return
             }
