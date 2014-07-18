@@ -1,4 +1,11 @@
 extension Array {
+
+    // copied from http://stackoverflow.com/questions/24003191/pick-a-random-element-from-an-array 
+    func randomItem() -> T {
+        let index = Int(arc4random_uniform(UInt32(self.count)))
+        return self[index]
+    }
+
     func each(iterator: (T) -> Void) -> Array {
         for item in self { iterator(item) }
         return self
