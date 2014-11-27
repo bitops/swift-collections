@@ -1,5 +1,35 @@
 extension Array {
 
+    mutating func unshift(newElem: T) {
+        self.insert(newElem, atIndex: 0)
+    }
+    
+    mutating func pop() -> T {
+        var idx = self.count - 1
+        var item = self[idx]
+        self.removeAtIndex(idx)
+        return item
+    }
+    
+    mutating func shift() -> T {
+        var elem = self[0]
+        self.removeAtIndex(0)
+        return elem
+    }
+    
+    mutating func push(newElem: T) {
+        self.append(newElem)
+    }
+    
+    // from https://gist.github.com/ijoshsmith/5e3c7d8c2099a3fe8dc3
+    mutating func shuffle()
+    {
+        for _ in 0..<10
+        {
+            sort { (_,_) in arc4random() < arc4random() }
+        }
+    }
+
     // copied from http://stackoverflow.com/questions/24003191/pick-a-random-element-from-an-array 
     func randomItem() -> T {
         let index = Int(arc4random_uniform(UInt32(self.count)))
