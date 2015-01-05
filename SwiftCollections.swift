@@ -1,3 +1,5 @@
+import Foundation
+
 extension Array {
 
     mutating func unshift(newElem: T) {
